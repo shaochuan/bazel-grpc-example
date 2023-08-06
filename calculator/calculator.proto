@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package calculator;
+
+// Defines a service with name Calculator
+service CalculatorService {
+    // Add a function with name add in the Calculator service.
+    rpc Add(AddRequest) returns (AddResponse) {}
+}
+
+message AddRequest {
+    repeated int32 integers = 1 [packed=true];
+}
+
+message AddResponse {
+    optional int32 sum = 1;
+}
